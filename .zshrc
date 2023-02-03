@@ -1,4 +1,4 @@
-export PATH=/opt:$PATH
+export PATH=/opt:/opt/ExifTool/:opt/ExifTool/lib:$PATH
 
 # remove background colors for directories
 LS_COLORS=$LS_COLORS:'tw=00;33:ow=01;33:'; export LS_COLORS
