@@ -1,0 +1,30 @@
+[default]
+default_calendar = 'private'
+show_all_days = false
+timedelta = 30d
+highlight_event_days = true
+
+[highlight_days]
+color = 'dark red'
+method = 'fg'
+
+[locale]
+timeformat = %H:%M
+dateformat = %d-%m-%y
+longdateformat = %d-%m-%y
+datetimeformat = %d-%m-%y %H:%M
+longdatetimeformat = %d-%m-%y %H:%M
+
+
+[calendars]
+
+[[private]]
+path = /home/uriel/.local/share/khal/calendars/private
+type = calendar
+color = dark green
+
+[[birthdays]]
+path = /home/uriel/.local/share/khal/calendars/birthdays
+type = birthdays
+color = yellow
+
