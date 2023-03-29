@@ -1,3 +1,7 @@
+-- Lvim config.lua
+-- Uriel Zajaczkovski
+-- initial commit: 2023-Mar-29
+
 --[[
 lvim is the global options object
 
@@ -6,7 +10,6 @@ filled in as strings with either
 a global executable or a path to
 an executable
 ]]
--- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
 
 -- general
 lvim.log.level = "warn"
@@ -191,6 +194,14 @@ lvim.plugins = {
              },
            })
          end
+       },
+       { "lervag/vimtex",
+         ft = "tex",
+         config=function()
+           vim.g.vimtex_view_method = 'zathura'
+           vim.g.vimtex_syntax_enabled = 1
+           vim.cmd("call vimtex#init()")
+         end,
        },
 }
 
