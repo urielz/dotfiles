@@ -1,6 +1,10 @@
--- Lvim config.lua
+-----------------------------------
+-- LunarVim config.lua
 -- Uriel Zajaczkovski
--- initial commit: 2023-Mar-29
+-- Initial commit: 2023-Mar-29
+-- Last Edit: 2023-Mar-31
+-----------------------------------
+
 
 --[[
 lvim is the global options object
@@ -11,12 +15,15 @@ a global executable or a path to
 an executable
 ]]
 
--- general
+----------------------
+-- general settings --
+----------------------
 lvim.log.level = "warn"
 lvim.format_on_save.enabled = false
 lvim.colorscheme = "lunar"
--- to disable icons and use a minimalist setup, uncomment the following
--- lvim.use_icons = false
+vim.opt.wrap = true
+vim.opt.ignorecase = true -- ignore case when searching
+vim.opt.expandtab = true -- convert tab to space
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
