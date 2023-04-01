@@ -1,0 +1,70 @@
+* {
+	font-size: 11px;
+	font-family: BlexMono Nerd Font;
+        padding: 0;
+        margin: -1;
+}
+
+window#waybar {
+        background: #000000;
+	color: #fdf6e3;
+}
+
+#tray {
+	background: #000000;
+}
+
+#workspaces button {
+	padding: 0 0px;
+        color: #ffffff;
+}
+#workspaces button.focused {
+	color: #268bd2;
+}
+#workspaces button:hover {
+	box-shadow: inherit;
+	text-shadow: inherit;
+}
+#workspaces button:hover {
+	background: #000000;
+	border: #000000;
+	padding: 0 0px;
+}
+
+#memory {
+	color: #2aa198;
+        padding: 0 5px;
+}
+#cpu {
+	color: #6c71c4;
+        padding: 0 5px;
+}
+#temperature {
+	color: #6c71c4;
+        padding: 0 5px;
+}
+#network.1 {
+        color: #af0000;
+        padding: 0 8px;
+}
+#disk {
+	color: #b58900;
+        padding: 0 3px;
+}
+
+#clock {
+        padding: 0 4px;
+}
+#battery {
+        padding: 0 4px;
+}
+#pulseaudio {
+             color: #ffffff;
+             padding: 0 4px;
+}
+#network.2 {
+           padding: 0 6px;
+}
+#backlight {
+            padding: 0 8px;
+}
