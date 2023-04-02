@@ -1,0 +1,15 @@
+# Papis configuration file
+# Uriel Zajaczkovski
+# Created: Mar-31-2023
+# Last Edit: Apr-01-2023
+#
+
+[settings]
+default-library = papers
+ref-format = {doc[author_list][0][surname]}{doc[year]}
+
+[tui]
+editmode = lvim
+
+[papers]
+dir = ~/papers
