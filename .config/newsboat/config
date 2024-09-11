@@ -1,0 +1,39 @@
+browser firefox
+external-url-viewer "urlscan -dc -r 'linkhandler {}'"
+
+# -- display -------------------------------------------------------------------
+
+color listnormal cyan default
+color listfocus black yellow standout bold
+color listnormal_unread blue default
+color listfocus_unread yellow default bold
+color info red black bold
+color article white default bold
+
+datetime-format "%F" 
+
+highlight feedlist "[║│]" red default bold
+highlight feedlist "╠═.*" red default bold
+
+#highlight feedlist "\\(Interviews\\) .*" red
+
+#feedlist-format "%?T?║%4i %n %u %t &╠════════════════════════════════════════════════%t?"
+
+# -- Bind-Keys: Navigation -----------------------------------------------------
+
+bind-key j down
+bind-key k up
+bind-key j next articlelist
+bind-key k prev articlelist
+bind-key J next-feed articlelist
+bind-key K prev-feed articlelist
+
+# -- Bind-Keys -----------------------------------------------------------------
+
+bind-key U show-urls
+
+# -- Macros --------------------------------------------------------------------
+
+macro , open-in-browser
+macro v set browser "setsid -f mpv --no-terminal" ; open-in-browser ; set browser firefox 
+
