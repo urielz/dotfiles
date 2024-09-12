@@ -1,4 +1,4 @@
-export PATH=/opt:/opt/ExifTool/:opt/ExifTool/lib:$PATH
+export PATH=/opt:/opt/ExifTool/:opt/ExifTool/lib:/home/uriel/.local/bin:$PATH
 
 # remove background colors for directories
 LS_COLORS=$LS_COLORS:'tw=00;33:ow=01;33:'; export LS_COLORS
@@ -28,6 +28,9 @@ fi
 
 # Aliases
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias vscodium='codium --enable-features=UseOzonePlatform --ozone-platform=wayland'
+alias crt='/usr/bin/cool-retro-term'
+alias ftube='freetube --enable-features=UseOzonePlatform,WaylandWindowDecorations --ozone-platform-hint=auto'
 
 # ------------------------------------------------------------------------
 # Path to your oh-my-zsh installation.
@@ -99,7 +102,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -128,3 +131,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
