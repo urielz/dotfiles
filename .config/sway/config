@@ -20,7 +20,7 @@ set $term foot
 set $drun tofi-drun | xargs swaymsg exec --
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-#set $menu dmenu_path | dmenu | xargs swaymsg exec --
+# set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -76,7 +76,7 @@ output * bg /usr/share/backgrounds/default.png fill
 
     # Start your launcher
     bindsym $mod+d exec $drun
-
+    #bindsym $mod+d exec ulauncher-toggle
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
     # Despite the name, also works for non-floating windows.
@@ -91,17 +91,23 @@ output * bg /usr/share/backgrounds/default.png fill
     bindsym $mod+Shift+e tness keys
 
     # map brightness keys (needs brightnessctl installed via dnf)
-    bindsym XF86MonBrightnessUp exec brightnessctl -d intel_backlight s 10%+
-    bindsym XF86MonBrightnessDown exec brightnessctl -d intel_backlight s 10%-
+    bindsym XF86MonBrightnessUp exec brightnessctl -d intel_backlight s 2%+
+    bindsym XF86MonBrightnessDown exec brightnessctl -d intel_backlight s 2%-
 
     # multimedia keys
-    bindsym XF86AudioMute exec i3-pa-mixer.py mute
+    bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -2%
+    bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +2%
+    bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
+    # 
+    # more general solution using (audio sink independent) using i3-pa-mixer.py
+    # can't make it work, leaving it here for future reference
+    #bindsym XF86AudioMute exec i3-pa-mixer.py mute
     # see also https://git.joeyh.name/index.cgi/joey/home.git/tree/bin/mic_mute
-    bindsym XF86AudioMicMute exec i3-pa-mixer.py mute-mic
+    #bindsym XF86AudioMicMute exec i3-pa-mixer.py mute-mic
     # also use "shift-mute" as an alternative to mic mute, because there's no such keysym on WASD keyboards
-    bindsym Shift+XF86AudioMute exec i3-pa-mixer.py mute-mic
-    bindsym XF86AudioLowerVolume exec i3-pa-mixer.py down
-    bindsym XF86AudioRaiseVolume exec i3-pa-mixer.py up
+    #bindsym Shift+XF86AudioMute exec i3-pa-mixer.py mute-mic
+    #bindsym XF86AudioLowerVolume exec i3-pa-mixer.py down
+    #bindsym XF86AudioRaiseVolume exec i3-pa-mixer.py up
     
     # do not show window title, just a thin, one-pixel border
     default_border pixel 1
@@ -222,6 +228,12 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+#
+# Miscellaneous applications/scripts:
+#
+
+    bindsym $mod+y exec /opst/mpv_launcher.sh 
+
 # Status bar
 #
 bar {
@@ -230,6 +242,6 @@ bar {
 }
 
 # font scaling - default is to scale 2x, which is way too big
-output eDP-1 scale 1.7
+output eDP-1 scale 2.0
 
 include /etc/sway/config.d/*
