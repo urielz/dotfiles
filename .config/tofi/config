@@ -1,0 +1,11 @@
+width = 80%
+height = 50%
+border-width = 0 
+outline-width = 0
+padding-left = 5%
+padding-top = 5%
+padding-bottom = 5%
+result-spacing = 5
+font = monospace
+background-color = #000A
+font-size = 12
