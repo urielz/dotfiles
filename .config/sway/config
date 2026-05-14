@@ -233,8 +233,8 @@ bindsym $mod+r mode "resize"
 #
 # Miscellaneous applications/scripts:
 #
-
-    bindsym $mod+y exec /opst/mpv_launcher.sh 
+bindsym $mod+p exec grim -g "$(slurp -d)" - | wl-copy
+bindsym $mod+y exec /opst/mpv_launcher.sh 
 
 # Status bar
 #
