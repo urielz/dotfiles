@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term foot
+set $term kitty 
 # Your preferred application launcher
 #set $menu fuzzel #-b 000000ff -f SourceCodePro:size=12 -i Arc -w 40 -l 25
 set $drun tofi-drun | xargs swaymsg exec --
@@ -26,12 +26,14 @@ set $drun tofi-drun | xargs swaymsg exec --
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Fira mono 10
+font pango:Fira mono 9 
+titlebar_padding 5 1
+titlebar_border_thickness 0
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/default.png fill
+# output * bg /usr/share/backgrounds/default.png fill
 #
 # Example configuration:
 #
